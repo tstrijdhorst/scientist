@@ -17,7 +17,7 @@ class Laboratory
     /**
      * Collection of journals to report to.
      *
-     * @var \Scientist\Journals\Journal[]
+     * @var Journal[]
      */
     protected $journals = [];
 
@@ -41,7 +41,7 @@ class Laboratory
     /**
      * Register a new journal.
      *
-     * @param \Scientist\Journals\Journal $journal
+     * @param Journal $journal
      *
      * @return $this
      */
@@ -66,8 +66,6 @@ class Laboratory
      * Start a new experiment.
      *
      * @param string $name
-     *
-     * @return mixed
      */
     public function experiment($name)
     {
@@ -77,7 +75,7 @@ class Laboratory
     /**
      * Run an experiment.
      *
-     * @param \Scientist\Experiment $experiment
+     * @param Experiment $experiment
      *
      * @return mixed
      */
@@ -97,9 +95,9 @@ class Laboratory
     /**
      * Run an experiment and return the result.
      *
-     * @param \Scientist\Experiment $experiment
+     * @param Experiment $experiment
      *
-     * @return \Scientist\Report
+     * @return Report
      */
     public function getReport(Experiment $experiment)
     {
@@ -112,8 +110,8 @@ class Laboratory
     /**
      * Report experiment result to registered journals.
      *
-     * @param \Scientist\Experiment $experiment
-     * @param \Scientist\Report     $report
+     * @param Experiment $experiment
+     * @param Report     $report
      *
      * @return void
      */

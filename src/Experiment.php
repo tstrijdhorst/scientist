@@ -55,29 +55,29 @@ class Experiment
     /**
      * Laboratory instance.
      *
-     * @var \Scientist\Laboratory
+     * @var Laboratory
      */
     protected $laboratory;
 
     /**
      * Matcher for experiment values.
      *
-     * @var \Scientist\Matchers\Matcher
+     * @var Matcher
      */
     protected $matcher;
 
     /**
      * Execution chance.
      *
-     * @var \Scientist\Chances\Chance
+     * @var Chance
      */
     protected $chance;
 
     /**
      * Create a new experiment.
      *
-     * @param string                $name
-     * @param \Scientist\Laboratory $laboratory
+     * @param string     $name
+     * @param Laboratory $laboratory
      */
     public function __construct($name, Laboratory $laboratory)
     {
@@ -100,7 +100,7 @@ class Experiment
     /**
      * Retrieve the laboratory instance.
      *
-     * @return \Scientist\Laboratory|null
+     * @return Laboratory|null
      */
     public function getLaboratory()
     {
@@ -137,15 +137,15 @@ class Experiment
     {
         return $this->controlContext;
     }
-
-    /**
-     * Register a trial callback.
-     *
-     * @param string   $name
-     * @param callable $callback
-     *
-     * @return $this
-     */
+	
+	/**
+	 * Register a trial callback.
+	 *
+	 * @param string   $name
+	 * @param callable $callback
+	 * @param null     $context
+	 * @return Experiment
+	 */
     public function trial($name, callable $callback, $context = null)
     {
         $this->trials[$name] = new Trial($name, $callback, $context);
@@ -178,7 +178,7 @@ class Experiment
     /**
      * Set a matcher for this experiment.
      *
-     * @param \Scientist\Matchers\Matcher $matcher
+     * @param Matcher $matcher
      *
      * @return $this
      */
@@ -192,7 +192,7 @@ class Experiment
     /**
      * Get the matcher for this experiment.
      *
-     * @return \Scientist\Matchers\Matcher
+     * @return Matcher
      */
     public function getMatcher()
     {
@@ -259,7 +259,7 @@ class Experiment
     /**
      * Execute the experiment and return a report.
      *
-     * @return \Scientist\Report
+     * @return Report
      */
     public function report()
     {

@@ -1,10 +1,14 @@
 <?php
 
+namespace Scientist\Tests;
+
+use PHPUnit\Framework\TestCase;
 use Scientist\Experiment;
 use Scientist\Laboratory;
 use Scientist\Matchers\StandardMatcher;
+use Scientist\Trial;
 
-class ExperimentTest extends \PHPUnit\Framework\TestCase
+class ExperimentTest extends TestCase
 {
     public function test_that_a_new_experiment_can_be_created()
     {
@@ -78,8 +82,8 @@ class ExperimentTest extends \PHPUnit\Framework\TestCase
             'third',
         ];
         $trials = $e->getTrials();
-        $this->assertSame($expected, \array_keys($trials));
-        $this->assertContainsOnlyInstancesOf(\Scientist\Trial::class, $trials);
+        $this->assertSame($expected, array_keys($trials));
+        $this->assertContainsOnlyInstancesOf(Trial::class, $trials);
     }
 
     public function test_that_a_chance_variable_can_be_set()

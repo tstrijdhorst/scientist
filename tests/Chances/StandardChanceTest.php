@@ -1,7 +1,10 @@
 <?php
-namespace Scientist\Chances;
+namespace Scientist\Tests\Chances;
 
-class StandardChanceTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use Scientist\Chances\StandardChance;
+
+class StandardChanceTest extends TestCase
 {
     /**
      * @var StandardChance

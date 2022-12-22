@@ -1,11 +1,14 @@
 <?php
 
+namespace Scientist\Tests;
+
+use PHPUnit\Framework\TestCase;
 use Scientist\Intern;
 use Scientist\Report;
 use Scientist\Experiment;
 use Scientist\Laboratory;
 
-class InternTest extends \PHPUnit\Framework\TestCase
+class InternTest extends TestCase
 {
     public function test_that_intern_can_be_created()
     {
