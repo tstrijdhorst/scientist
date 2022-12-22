@@ -1,9 +1,14 @@
 <?php
 
+namespace Scientist\Tests;
+
+use Error;
+use Exception;
+use PHPUnit\Framework\TestCase;
 use Scientist\Result;
 use Scientist\Machine;
 
-class MachineTest extends \PHPUnit\Framework\TestCase
+class MachineTest extends TestCase
 {
     public function test_that_machine_can_be_created()
     {
@@ -67,8 +72,7 @@ class MachineTest extends \PHPUnit\Framework\TestCase
         $m->execute();
     }
 
-    public static function getErrorData()
-    {
+    public static function getErrorData(): array {
         return [
             [new Exception()],
             [new Error()],

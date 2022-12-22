@@ -1,8 +1,11 @@
 <?php
 
+namespace Scientist\Tests\Matchers;
+
+use PHPUnit\Framework\TestCase;
 use Scientist\Matchers\StandardMatcher;
 
-class StandardMatcherTest extends \PHPUnit\Framework\TestCase
+class StandardMatcherTest extends TestCase
 {
     public function test_that_standard_matcher_can_be_created()
     {

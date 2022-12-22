@@ -17,9 +17,9 @@ class Intern
     /**
      * Run an experiment, and retrieve the result.
      *
-     * @param \Scientist\Experiment $experiment
+     * @param Experiment $experiment
      *
-     * @return \Scientist\Report
+     * @return Report
      */
     public function run(Experiment $experiment)
     {
@@ -34,9 +34,9 @@ class Intern
     /**
      * Run the control callback, and record its execution state.
      *
-     * @param \Scientist\Experiment $experiment
+     * @param Experiment $experiment
      *
-     * @return \Scientist\Result
+     * @return Result
      */
     protected function runControl(Experiment $experiment)
     {
@@ -51,9 +51,9 @@ class Intern
     /**
      * Run trial callbacks and record their execution state.
      *
-     * @param \Scientist\Experiment $experiment
+     * @param Experiment $experiment
      *
-     * @return \Scientist\Result[]
+     * @return Result[]
      */
     protected function runTrials(Experiment $experiment)
     {
@@ -74,9 +74,9 @@ class Intern
     /**
      * Determine whether trial results match the control.
      *
-     * @param \Scientist\Matchers\Matcher $matcher
-     * @param \Scientist\Result           $control
-     * @param \Scientist\Result[]         $trials
+     * @param Matcher  $matcher
+     * @param Result   $control
+     * @param Result[] $trials
      */
     protected function determineMatches(Matcher $matcher, Result $control, array $trials = [])
     {

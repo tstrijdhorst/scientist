@@ -1,11 +1,14 @@
 <?php
 
+namespace Scientist\Tests\Matchers;
+
+use Closure;
+use PHPUnit\Framework\TestCase;
 use Scientist\Matchers\ClosureMatcher;
 
-class ClosureMatcherTest extends \PHPUnit\Framework\TestCase
+class ClosureMatcherTest extends TestCase
 {
-    private function getClosure()
-    {
+    private function getClosure(): Closure {
         return function ($control, $trial) {
             return strtoupper($control) == strtoupper($trial);
         };

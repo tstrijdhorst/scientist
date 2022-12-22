@@ -2,6 +2,8 @@
 
 namespace Scientist\Matchers;
 
+use Closure;
+
 /**
  * Class ClosureMatcher
  *
@@ -11,15 +13,15 @@ class ClosureMatcher implements Matcher
 {
     /**
      * A closure which attempts to match the results.
-     * @var \Closure
+     * @var Closure
      */
     protected $closure;
 
     /**
      * Create a new matcher instance based on a closure.
-     * @param \Closure $closure The closure to use
+     * @param Closure $closure The closure to use
      */
-    public function __construct(\Closure $closure)
+    public function __construct(Closure $closure)
     {
         $this->closure = $closure;
     }

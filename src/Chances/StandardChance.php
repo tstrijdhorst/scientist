@@ -4,10 +4,11 @@ namespace Scientist\Chances;
 class StandardChance implements Chance
 {
     private $percentage = 100;
-
-    /**
-     * Determine whether or not the experiment should run
-     */
+	
+	/**
+	 * Determine whether or not the experiment should run
+	 *
+	 */
     public function shouldRun()
     {
         if ($this->percentage == 0) {

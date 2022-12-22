@@ -1,11 +1,14 @@
 <?php
 
+namespace Scientist\Tests\Journals;
+
+use PHPUnit\Framework\TestCase;
 use Scientist\Report;
 use Scientist\Laboratory;
 use Scientist\Experiment;
 use Scientist\Journals\StandardJournal;
 
-class JournalTest extends \PHPUnit\Framework\TestCase
+class JournalTest extends TestCase
 {
     public function test_that_journals_can_be_created()
     {

@@ -1,9 +1,13 @@
 <?php
 
+namespace Scientist\Tests;
+
+use Exception;
+use PHPUnit\Framework\TestCase;
 use Scientist\Report;
 use Scientist\Laboratory;
 
-class LaboratoryTest extends \PHPUnit\Framework\TestCase
+class LaboratoryTest extends TestCase
 {
     public function test_laboratory_can_be_created()
     {
@@ -53,12 +57,16 @@ class LaboratoryTest extends \PHPUnit\Framework\TestCase
     public function test_that_exceptions_are_thrown_within_control()
     {
         $this->expectException(Exception::class);
-
-        $v = (new Laboratory)
-            ->experiment('test experiment')
-            ->control(function () { throw new Exception; })
-            ->trial('trial', function () { return 'foo'; })
-            ->run();
+	
+	    (new Laboratory)
+		    ->experiment('test experiment')
+		    ->control(function () {
+			    throw new Exception;
+		    })
+		    ->trial('trial', function () {
+			    return 'foo';
+		    })
+		    ->run();
     }
 
     public function test_that_exceptions_are_swallowed_within_the_trial()

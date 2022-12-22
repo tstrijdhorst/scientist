@@ -22,7 +22,7 @@ class Report
     /**
      * The control result.
      *
-     * @var \Scientist\Result
+     * @var Result
      */
     protected $control;
 
@@ -36,9 +36,9 @@ class Report
     /**
      * Create a new result instance.
      *
-     * @param string            $name
-     * @param \Scientist\Result $control
-     * @param array             $trials
+     * @param string $name
+     * @param Result $control
+     * @param array  $trials
      */
     public function __construct($name, Result $control, array $trials = [])
     {
@@ -60,7 +60,7 @@ class Report
     /**
      * Get the control result instance.
      *
-     * @return \Scientist\Result
+     * @return Result
      */
     public function getControl()
     {
@@ -72,7 +72,7 @@ class Report
      *
      * @param string $name
      *
-     * @return \Scientist\Result
+     * @return Result
      */
     public function getTrial($name)
     {

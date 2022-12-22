@@ -1,8 +1,12 @@
 <?php
 
+namespace Scientist\Tests;
+
+use Exception;
+use PHPUnit\Framework\TestCase;
 use Scientist\Result;
 
-class ResultTest extends \PHPUnit\Framework\TestCase
+class ResultTest extends TestCase
 {
     public function test_result_can_be_created()
     {
@@ -49,7 +53,7 @@ class ResultTest extends \PHPUnit\Framework\TestCase
     public function test_result_can_have_exception()
     {
         $r = new Result;
-        $r->setException(new Exception);
+        $r->setException(new Exception());
         $this->assertInstanceOf(Exception::class, $r->getException());
     }
 

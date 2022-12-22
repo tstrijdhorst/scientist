@@ -12,10 +12,6 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/tests',
     ]);
 
-        $rectorConfig->sets([
-            \Rector\PHPUnit\Set\PHPUnitSetList::PHPUNIT_70,
-            \Rector\PHPUnit\Set\PHPUnitSetList::PHPUNIT_80,
-            \Rector\PHPUnit\Set\PHPUnitSetList::PHPUNIT_90,
-            \Rector\PHPUnit\Set\PHPUnitSetList::PHPUNIT_91,
-        ]);
+    // register a single rule
+    $rectorConfig->rule(\Rector\PSR4\Rector\FileWithoutNamespace\NormalizeNamespaceByPSR4ComposerAutoloadRector::class);
 };

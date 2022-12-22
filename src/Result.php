@@ -51,7 +51,7 @@ class Result
     /**
      * Exception thrown by callback.
      *
-     * @var \Exception|null
+     * @var Exception|null
      */
     protected $exception;
 

@@ -35,17 +35,18 @@ class Machine
     /**
      * The result instance.
      *
-     * @var \Scientist\Result
+     * @var Result
      */
     protected $result;
-
-    /**
-     * Inject machine dependencies.
-     *
-     * @param callable $callback
-     * @param array    $params
-     * @param boolean  $muted
-     */
+	
+	/**
+	 * Inject machine dependencies.
+	 *
+	 * @param callable $callback
+	 * @param array    $params
+	 * @param boolean  $muted
+	 * @param array    $context
+	 */
     public function __construct(callable $callback, array $params = [], $muted = false, $context = null)
     {
         $this->callback = $callback;
@@ -57,7 +58,7 @@ class Machine
     /**
      * Execute the callback and retrieve a result.
      *
-     * @return \Scientist\Result
+     * @return Result
      */
     public function execute()
     {
@@ -87,7 +88,8 @@ class Machine
     protected function executeCallback()
     {
         if ($this->muted) {
-            return $this->executeMutedCallback();
+			$this->executeMutedCallback();
+			return;
         }
 
         $this->result->setValue(call_user_func_array($this->callback, $this->params));

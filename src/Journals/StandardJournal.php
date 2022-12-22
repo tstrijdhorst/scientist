@@ -15,24 +15,22 @@ class StandardJournal implements Journal
     /**
      * The executed experiment.
      *
-     * @var \Scientist\Experiment
+     * @var Experiment
      */
     protected $experiment;
 
     /**
      * The experiment report.
      *
-     * @var \Scientist\Report
+     * @var Report
      */
     protected $report;
 
     /**
      * Dispatch a report to storage.
      *
-     * @param \Scientist\Experiment $experiment
-     * @param \Scientist\Report     $report
-     *
-     * @return mixed
+     * @param Experiment $experiment
+     * @param Report     $report
      */
     public function report(Experiment $experiment, Report $report)
     {
@@ -43,7 +41,7 @@ class StandardJournal implements Journal
     /**
      * Get the experiment.
      *
-     * @return \Scientist\Experiment
+     * @return Experiment
      */
     public function getExperiment()
     {
@@ -53,7 +51,7 @@ class StandardJournal implements Journal
     /**
      * Get the experiment report.
      *
-     * @return \Scientist\Report
+     * @return Report
      */
     public function getReport()
     {

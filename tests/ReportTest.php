@@ -1,9 +1,12 @@
 <?php
 
+namespace Scientist\Tests;
+
+use PHPUnit\Framework\TestCase;
 use Scientist\Result;
 use Scientist\Report;
 
-class ReportTest extends \PHPUnit\Framework\TestCase
+class ReportTest extends TestCase
 {
     public function test_that_report_can_be_created()
     {
